@@ -1,5 +1,7 @@
 usar postman ou front-end para reqs.
 
+funcionalidades de cadastro e login como exemplo.
+
 executar curls de exemplo:   
 
 curl de cadastro:
