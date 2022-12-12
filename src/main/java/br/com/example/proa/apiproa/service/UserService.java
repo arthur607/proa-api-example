@@ -17,6 +17,10 @@ public class UserService {
     private final UserRepository repository;
 
     public void process(RegisterRequest requestForm){
+
+        if (repository.getUser(requestForm.getEmail()).isPresent()){
+            throw new RuntimeException("email já foi cadastrado: "+ requestForm.getEmail());
+        }
         var user = new UserEntity(UUID.randomUUID().toString(),
                 requestForm.getNome(), requestForm.getEmail(), requestForm.getPassword());
 
